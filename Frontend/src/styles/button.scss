@@ -1,20 +1,32 @@
-.button{
-    border:none;
+@use "./tokens" as *;
+
+.button {
+    border: none;
     outline: none;
-    padding-inline: 1.5rem;
-    padding-block: 0.75rem;
-    border-radius: 1rem;
+    padding: 0.7rem 1.15rem;
+    border-radius: $radius-md;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
 
-    transition: all 0.16s ease-in-out;
-    
-    &.primary-button{
-        background-color: #e1034d;
-        color: white;    
+    &.primary-button {
+        background-color: $accent;
+        color: #fff;
+        width: 100%;
+        box-shadow: $shadow-sm;
+
+        &:hover {
+            background-color: $accent-hover;
+        }
+
+        &:active {
+            opacity: 0.95;
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
     }
-
-    &:active{
-        transform: scale(0.95);
-    }
-
 }
-
